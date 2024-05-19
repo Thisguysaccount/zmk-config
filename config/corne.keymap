@@ -13,7 +13,7 @@
         tog_kp: tog_kp {
             compatible = "zmk,behavior-hold-tap";
             label = "TOG_KP";
-            bindings = <&kp>, <&tog>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <36 37 40 41 39 24 12 0 35 23 11 38 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 20 21 22 23 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41>;
@@ -39,6 +39,40 @@
             hold-trigger-key-positions = <36 37 40 41 39 24 12 0 35 23 11 38 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 20 21 22 23 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41>;
             tapping-term-ms = <250>;
         };
+
+        Layer_shift: Layer_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_SHIFT";
+            bindings = <&mt>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <36 37 40 41 39 24 12 0 35 23 11 38 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 20 21 22 23 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41>;
+            tapping-term-ms = <250>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        Base {
+            bindings = <&tog 0>;
+            key-positions = <16 37>;
+        };
+
+        Numpad {
+            bindings = <&tog 1>;
+            key-positions = <37 15>;
+        };
+
+        Layer_2 {
+            bindings = <&tog 2>;
+            key-positions = <37 14>;
+        };
+
+        Layer_3 {
+            bindings = <&tog 3>;
+            key-positions = <37 13>;
+        };
     };
 
     keymap {
@@ -52,29 +86,23 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&tog_kp ESC 2                 &kp Q  &kp W  &kp E          &kp R      &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp DEL
-&sk_kp LEFT_CONTROL LEFT_ALT  &kp A  &kp S  &kp D          &kp F      &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&tog_kp LEFT_SHIFT 1          &kp Z  &kp X  &kp C          &kp V      &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                            &kp BACKSPACE  &kp SPACE  &kp ENTER    &kp RET  &mo 2  &kp RALT
+&tog_kp TAB ESC               &kp Q  &kp W  &kp E          &kp R      &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp DEL
+&sk_kp LEFT_CONTROL LEFT_ALT  &kp A  &kp S  &kp D          &kp F      &kp G        &kp H    &kp J  &kp K          &kp L    &kp SEMI  &kp SQT
+&kp LEFT_SHIFT                &kp Z  &kp X  &kp C          &kp V      &kp B        &kp N    &kp M  &kp COMMA      &kp DOT  &kp FSLH  &tog 3
+                                            &kp BACKSPACE  &kp SPACE  &kp ENTER    &kp RET  &mo 2  &kp RIGHT_GUI
             >;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        numpad_layer {
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&none  &kp FSLH   &kp ASTERISK  &kp N7         &kp N8  &kp N9       &kp F1  &kp F2   &kp F3   &kp F4   &none  &none
+&none  &kp MINUS  &kp PLUS      &kp N4         &kp N5  &kp N6       &kp F5  &kp F6   &kp F7   &kp F8   &none  &none
+&none  &kp EQUAL  &kp PERIOD    &kp N1         &kp N2  &kp N3       &kp F9  &kp F10  &kp F11  &kp F12  &none  &none
+                                &kp BACKSPACE  &kp N0  &kp ENTER    &none   &mo 2    &none
             >;
         };
 
-        raise_layer {
+        Symbol_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -89,21 +117,18 @@
             >;
         };
 
-        numpad_layer {
-            bindings = <
-&none  &kp FSLH   &kp ASTERISK  &kp N7         &kp N8  &kp N9       &none  &none  &none  &none  &none  &none
-&none  &kp MINUS  &kp PLUS      &kp N4         &kp N5  &kp N6       &none  &none  &none  &none  &none  &none
-&none  &none      &kp PERIOD    &kp N1         &kp N2  &kp N3       &none  &none  &none  &none  &none  &none
-                                &kp BACKSPACE  &kp N0  &kp ENTER    &none  &none  &none
-            >;
-        };
+        Bluetooth {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-        layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&kp ESCAPE  &none         &none         &kp UP_ARROW    &none         &none           &none    &none     &kp UP_ARROW  &none      &none  &none
+&none       &none         &kp LEFT      &kp DOWN_ARROW  &kp RIGHT     &none           &none    &kp LEFT  &kp DOWN      &kp RIGHT  &none  &none
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &none    &none     &none         &none      &none  &none
+                                        &kp LGUI        &trans        &kp SPACE       &kp RET  &trans    &kp RALT
             >;
         };
     };
