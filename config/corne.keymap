@@ -23,11 +23,20 @@
         kp_layer_hold: kp_layer_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "KP_LAYER_HOLD";
-            bindings = <&mo>, <&kp>;
+            bindings = <&mo>, <&Space_Shlft_Tab>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <36 37 40 41 39 24 12 0 35 23 11 38 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 20 21 22 23 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41>;
             tapping-term-ms = <250>;
+        };
+
+        Space_Shlft_Tab: Space_Shlft_Tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_SHLFT_TAB";
+            bindings = <&kp SPACE>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -66,10 +75,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp_layer_hold TAB ESC  &kp Q  &kp W  &kp E          &kp R                   &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp DEL
-&kp LCTRL               &kp A  &kp S  &kp D          &kp F                   &kp G        &kp H    &kp J  &kp K          &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT          &kp Z  &kp X  &kp C          &kp V                   &kp B        &kp N    &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_ALT
-                                      &kp BACKSPACE  &kp_layer_hold 1 SPACE  &kp ENTER    &kp RET  &mo 2  &kp RIGHT_GUI
+&kp ESC         &kp Q  &kp W  &kp E          &kp R               &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp DEL
+&kp LCTRL       &kp A  &kp S  &kp D          &kp F               &kp G        &kp H    &kp J  &kp K          &kp L    &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C          &kp V               &kp B        &kp N    &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_ALT
+                              &kp BACKSPACE  &kp_layer_hold 1 0  &kp ENTER    &kp RET  &mo 2  &kp RIGHT_GUI
             >;
         };
 
