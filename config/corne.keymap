@@ -44,23 +44,23 @@
         compatible = "zmk,combos";
 
         Base {
-            bindings = <&tog 0>;
-            key-positions = <16 36>;
+            bindings = <&to 0>;
+            key-positions = <16 37>;
         };
 
         Numpad {
-            bindings = <&tog 1>;
-            key-positions = <15 36>;
+            bindings = <&to 1>;
+            key-positions = <15 37>;
         };
 
         Layer_2 {
-            bindings = <&tog 2>;
-            key-positions = <14 36>;
+            bindings = <&to 2>;
+            key-positions = <14 37>;
         };
 
         Layer_3 {
-            bindings = <&tog 3>;
-            key-positions = <13 36>;
+            bindings = <&to 3>;
+            key-positions = <13 37>;
         };
     };
 
