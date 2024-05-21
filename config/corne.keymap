@@ -75,19 +75,19 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q  &kp W  &kp E          &kp R               &kp T        &kp Y    &kp U  &kp I          &kp O    &kp P     &kp DEL
-&kp LCTRL       &kp A  &kp S  &kp D          &kp F               &kp G        &kp H    &kp J  &kp K          &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C          &kp V               &kp B        &kp N    &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_ALT
-                              &kp BACKSPACE  &kp_layer_hold 1 0  &kp ENTER    &kp RET  &mo 2  &kp RIGHT_GUI
+&none  &kp Q                    &kp W                &kp E                    &kp R                  &kp T        &kp Y    &kp U                   &kp I                         &kp O                      &kp P                     &none
+&none  &kp A                    &kp S                &kp D                    &kp_hold LEFT_SHIFT F  &kp G        &kp H    &kp_hold RIGHT_SHIFT J  &kp K                         &kp L                      &kp SQT                   &none
+&none  &kp_hold LG(LEFT_GUI) Z  &kp_hold LEFT_ALT X  &kp_hold LEFT_CONTROL C  &kp V                  &kp B        &kp N    &kp M                   &kp_hold RIGHT_CONTROL COMMA  &kp_hold RIGHT_ALT PERIOD  &kp_hold RIGHT_GUI SLASH  &none
+                                                     &kp BACKSPACE            &kp_layer_hold 1 0     &kp ENTER    &kp ESC  &mo 2                   &kp DEL
             >;
         };
 
         numpad_layer {
             bindings = <
-&trans  &kp FSLH   &kp ASTERISK  &kp N7  &kp N8  &kp N9    &kp F1  &kp F2   &kp F3   &kp F4   &none  &trans
-&none   &kp MINUS  &kp PLUS      &kp N4  &kp N5  &kp N6    &kp F5  &kp F6   &kp F7   &kp F8   &none  &none
-&none   &kp EQUAL  &kp PERIOD    &kp N1  &kp N2  &kp N3    &kp F9  &kp F10  &kp F11  &kp F12  &none  &none
-                                 &trans  &kp N0  &trans    &trans  &trans   &trans
+&trans  &kp PLUS   &kp N7        &kp N8  &kp N9  &kp MINUS    &kp F1  &kp F2   &kp F3   &kp F4   &none  &trans
+&none   &kp ASTRK  &kp N4        &kp N5  &kp N6  &kp FSLH     &kp F5  &kp F6   &kp F7   &kp F8   &none  &none
+&none   &kp EQUAL  &kp NUMBER_1  &kp N2  &kp N3  &kp ENTER    &kp F9  &kp F10  &kp F11  &kp F12  &none  &none
+                                 &kp N0  &trans  &trans       &trans  &trans   &trans
             >;
         };
 
@@ -99,10 +99,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans     &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DELETE
-&kp LCTRL  &none     &none   &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &none     &none   &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                             &trans    &trans    &trans       &trans     &trans     &trans
+&none  &none  &none  &kp AMPS    &kp ASTERISK  &kp LEFT_PARENTHESIS    &none      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &none  &none
+&none  &none  &none  &kp DOLLAR  &kp PERCENT   &kp CARET               &kp GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none  &none  &none
+&none  &none  &none  &kp EXCL    &kp AT        &kp HASH                &kp TILDE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &none  &none
+                     &trans      &trans        &kp UNDERSCORE          &trans     &trans                &trans
             >;
         };
 
