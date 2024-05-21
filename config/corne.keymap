@@ -74,23 +74,23 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
-            display-name = : Base;
             bindings = <
 &none  &kp Q                    &kp W                &kp E                    &kp R                  &kp T      &kp Y      &kp U                   &kp I                         &kp O                      &kp P                     &none
 &none  &kp A                    &kp S                &kp D                    &kp_hold LEFT_SHIFT F  &kp G      &kp H      &kp_hold RIGHT_SHIFT J  &kp K                         &kp L                      &kp SQT                   &none
 &none  &kp_hold LG(LEFT_GUI) Z  &kp_hold LEFT_ALT X  &kp_hold LEFT_CONTROL C  &kp V                  &kp B      &kp N      &kp M                   &kp_hold RIGHT_CONTROL COMMA  &kp_hold RIGHT_ALT PERIOD  &kp_hold RIGHT_GUI SLASH  &none
                                                      &kp BACKSPACE            &kp_layer_hold 1 0     &kp ESC    &kp ENTER  &mo 2                   &kp DEL
             >;
+            display-name = Base;
         };
 
         Numpad {
-            display-name = : Numpad;
             bindings = <
 &none  &kp PLUS   &kp N7        &kp N8  &kp N9  &kp MINUS    &kp F1  &kp F2   &kp F3   &kp F4   &none  &trans
 &none  &kp ASTRK  &kp N4        &kp N5  &kp N6  &kp FSLH     &kp F5  &kp F6   &kp F7   &kp F8   &none  &none
 &none  &kp EQUAL  &kp NUMBER_1  &kp N2  &kp N3  &kp ENTER    &kp F9  &kp F10  &kp F11  &kp F12  &none  &none
                                 &kp N0  &trans  &trans       &trans  &trans   &trans
             >;
+            display-name = Numpad;
         };
 
         Symbol {
@@ -100,13 +100,13 @@
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            display-name = : Symbol;
             bindings = <
 &none  &none  &none  &kp AMPS    &kp ASTERISK  &kp LEFT_PARENTHESIS    &none      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none  &none
 &none  &none  &none  &kp DOLLAR  &kp PERCENT   &kp CARET               &kp GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMI  &none  &none
 &none  &none  &none  &kp EXCL    &kp AT        &kp HASH                &kp TILDE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none     &none  &none
                      &trans      &kp UNDER     &trans                  &trans     &trans                &trans
             >;
+            display-name = Symbol;
         };
 
         Bluetooth {
@@ -116,13 +116,13 @@
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            display-name = : Bluetooth;
             bindings = <
 &trans      &none         &none         &kp UP_ARROW    &none         &none           &none   &none     &kp UP_ARROW  &none      &none  &none
 &none       &none         &kp LEFT      &kp DOWN_ARROW  &kp RIGHT     &none           &none   &kp LEFT  &kp DOWN      &kp RIGHT  &none  &none
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &none   &none     &none         &none      &none  &none
                                         &trans          &trans        &trans          &trans  &trans    &trans
             >;
+            display-name = Bluetooth;
         };
     };
 };
