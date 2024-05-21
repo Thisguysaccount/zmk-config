@@ -80,7 +80,6 @@
 &none  &kp_hold LG(LEFT_GUI) Z  &kp_hold LEFT_ALT X  &kp_hold LEFT_CONTROL C  &kp V                  &kp B      &kp N      &kp M                   &kp_hold RIGHT_CONTROL COMMA  &kp_hold RIGHT_ALT PERIOD  &kp_hold RIGHT_GUI SLASH  &none
                                                      &kp BACKSPACE            &kp_layer_hold 1 0     &kp ESC    &kp ENTER  &mo 2                   &kp DEL
             >;
-            display-name: Base;
         };
 
         Numpad {
@@ -90,7 +89,6 @@
 &none  &kp EQUAL  &kp NUMBER_1  &kp N2  &kp N3  &kp ENTER    &kp F9  &kp F10  &kp F11  &kp F12  &none  &none
                                 &kp N0  &trans  &trans       &trans  &trans   &trans
             >;
-            display-name: Numpad;
         };
 
         Symbol {
@@ -106,7 +104,6 @@
 &none  &none  &none  &kp EXCL    &kp AT        &kp HASH                &kp TILDE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none     &none  &none
                      &trans      &kp UNDER     &trans                  &trans     &trans                &trans
             >;
-            display-name: Symbol;
         };
 
         Bluetooth {
@@ -122,7 +119,6 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &none   &none     &none         &none      &none  &none
                                         &trans          &trans        &trans          &trans  &trans    &trans
             >;
-            display-name: Bluetooth;
         };
     };
 };
