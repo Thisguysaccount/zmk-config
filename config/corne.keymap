@@ -10,14 +10,15 @@
 
 / {
     behaviors {
-        kp_hold: kp_hold {
+        sk_hold: sk_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "KP_HOLD";
-            bindings = <&kp>, <&kp>;
+            label = "SK_HOLD";
+            bindings = <&sk>, <&kp>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <36 37 40 41 39 24 12 0 35 23 11 38 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 20 21 22 23 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41>;
             tapping-term-ms = <250>;
+            flavor = "tap-preferred";
         };
 
         kp_layer_hold: kp_layer_hold {
@@ -76,8 +77,8 @@
 
             bindings = <
 &none  &kp Q                    &kp W                &kp E                    &kp R                  &kp T      &kp Y      &kp U                   &kp I                         &kp O                      &kp P                     &none
-&none  &kp A                    &kp S                &kp D                    &kp_hold LEFT_SHIFT F  &kp G      &kp H      &kp_hold RIGHT_SHIFT J  &kp K                         &kp L                      &kp SQT                   &none
-&none  &kp_hold LG(LEFT_GUI) Z  &kp_hold LEFT_ALT X  &kp_hold LEFT_CONTROL C  &kp V                  &kp B      &kp N      &kp M                   &kp_hold RIGHT_CONTROL COMMA  &kp_hold RIGHT_ALT PERIOD  &kp_hold RIGHT_GUI SLASH  &none
+&none  &kp A                    &kp S                &kp D                    &sk_hold LEFT_SHIFT F  &kp G      &kp H      &sk_hold RIGHT_SHIFT J  &kp K                         &kp L                      &kp SQT                   &none
+&none  &sk_hold LG(LEFT_GUI) Z  &sk_hold LEFT_ALT X  &sk_hold LEFT_CONTROL C  &kp V                  &kp B      &kp N      &kp M                   &sk_hold RIGHT_CONTROL COMMA  &sk_hold RIGHT_ALT PERIOD  &sk_hold RIGHT_GUI SLASH  &none
                                                      &kp BACKSPACE            &kp_layer_hold 1 0     &kp ESC    &kp ENTER  &mo 2                   &kp DEL
             >;
 
@@ -87,7 +88,7 @@
         Numpad {
             bindings = <
 &none  &kp SLASH  &kp N7        &kp N8  &kp N9  &kp MINUS     &kp F1  &kp F2                   &kp F3   &kp F4   &none  &trans
-&none  &kp ASTRK  &kp N4        &kp N5  &kp N6  &kp ENTER     &kp F5  &kp_hold RIGHT_SHIFT F6  &kp F7   &kp F8   &none  &none
+&none  &kp ASTRK  &kp N4        &kp N5  &kp N6  &kp ENTER     &kp F5  &sk_hold RIGHT_SHIFT F6  &kp F7   &kp F8   &none  &none
 &none  &kp EQUAL  &kp NUMBER_1  &kp N2  &kp N3  &kp PERIOD    &kp F9  &kp F10                  &kp F11  &kp F12  &none  &none
                                 &kp N0  &trans  &trans        &trans  &trans                   &trans
             >;
@@ -104,7 +105,7 @@
 
             bindings = <
 &none  &none  &kp AMPS    &kp ASTERISK  &kp LEFT_PARENTHESIS  &none        &none      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LESS_THAN  &kp GREATER_THAN  &none
-&none  &none  &kp DOLLAR  &kp PERCENT   &kp_hold LSHFT CARET  &none        &kp GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMI       &kp MINUS         &none
+&none  &none  &kp DOLLAR  &kp PERCENT   &sk_hold LSHFT CARET  &none        &kp GRAVE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SEMI       &kp MINUS         &none
 &none  &none  &kp EXCL    &kp AT        &kp HASH              &none        &kp TILDE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &kp SLASH         &none
                           &trans        &trans                &kp UNDER    &trans     &trans                &trans
             >;
@@ -121,12 +122,12 @@
 
             bindings = <
 &none  &bt BT_CLR    &none         &kp UP_ARROW    &none         &none           &none   &none     &kp UP_ARROW  &none      &none  &none
-&none  &none         &kp LEFT      &kp DOWN_ARROW  &kp RIGHT     &none           &none   &kp LEFT  &kp DOWN      &kp RIGHT  &none  &none
+&none  &none         &kp LEFT      &kp DOWN_ARROW  &kp RIGHT     &kp ENTER       &none   &kp LEFT  &kp DOWN      &kp RIGHT  &none  &none
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &none   &none     &none         &none      &none  &none
                                    &trans          &trans        &trans          &trans  &trans    &trans
             >;
 
-            label = "Bluetooth";
+            label = "BT Layer";
         };
     };
 };
